@@ -1,0 +1,53 @@
+.contactBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40rem;
+  height: 10rem;
+  margin: 5rem auto;
+  border-radius: 2.8rem;
+  background: rgba(245, 245, 245, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.contactBtn:hover,
+.contactBtn:focus {
+  background-color: #f0f0f094;
+  transform: scale(1.03);
+}
+
+.btContact {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-weight: 500;
+  font-size: 3.2rem;
+  text-align: center;
+  margin: 0;
+  color: #0c2c67;
+}
+
+@media (max-width: 768px) {
+  .contactBtn {
+    width: 90%;
+    height: 8rem;
+    margin: 3rem auto;
+  }
+
+  .btContact {
+    font-size: 2.4rem;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactBtn {
+    width: 95%;
+    height: 7rem;
+    margin: 2rem auto;
+  }
+
+  .btContact {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,83 @@
+.RecSecDiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2rem;
+  flex-wrap: wrap;
+  /* padding: 2rem; */
+}
+
+.divrecbox {
+  flex: 1 1;
+  max-width: 50rem;
+  text-align: center;
+}
+
+.StartRev {
+  font-family: Frank Ruhl Libre;
+  font-weight: 700;
+  font-size: 3.5rem;
+  margin: 0 2rem 1rem;
+  text-align: right;
+}
+
+.RevPCon,
+.RevName {
+  font-family: Frank Ruhl Libre;
+  font-weight: 400;
+  font-size: 2.4rem;
+  line-height: 1.4;
+  text-align: right;
+}
+
+.RevPCon {
+  padding: 0 2rem;
+}
+
+.RevName {
+  padding: 0 2rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.nextBtn {
+  padding: 1rem;
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.nextBtn:hover {
+  background-color: #f0f0f0;
+}
+
+@media (max-width: 991px) {
+  .nextBtn {
+    display: none;
+  }
+  .RecSecDiv {
+    flex-direction: row;
+    gap: 0;
+    /* padding: 0 0.5rem; */
+  }
+  .divrecbox {
+    max-width: 90%;
+  }
+  .RevPCon {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .divrecbox {
+    max-width: 95%;
+  }
+  .RevPCon {
+    font-size: 1.6rem;
+  }
+  .RevName {
+    font-size: 1.4rem;
+  }
+}

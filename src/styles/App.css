@@ -1,0 +1,33 @@
+body {
+  background-image: linear-gradient(
+    45deg,
+    #beffab,
+    #abff5d9e,
+    #ff91a9,
+    #9900ffdb
+  );
+  /* background-image: linear-gradient(45deg, #87ceeb, #819cd9, #87ceeb, #b19cd9); */
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
