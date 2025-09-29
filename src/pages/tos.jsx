@@ -1,6 +1,7 @@
 // components/TermsOfService.js
 import React from 'react'
 import Link from 'next/link'
+import { FaArrowAltCircleUp } from 'react-icons/fa'
 
 const TermsOfService = () => {
   const styles = {
@@ -29,6 +30,18 @@ const TermsOfService = () => {
       fontSize: '2.2rem',
       marginBottom: '1rem',
     },
+    buttontop: {
+      position: 'fixed',
+      bottom: '1rem',
+      right: '1rem',
+      height: 'fit-content',
+      padding: '0.5rem',
+      display: 'flex',
+      borderRadius: '20%',
+      fontSize: '5rem',
+      textAlign: 'center',
+      zIndex: '1',
+    },
     button: {
       position: 'fixed',
       top: '1rem',
@@ -48,6 +61,7 @@ const TermsOfService = () => {
 
   return (
     <div style={styles.container}>
+      <div id='top'></div>
       <Link
         href='/'
         style={styles.button}
@@ -56,13 +70,11 @@ const TermsOfService = () => {
       >
         חזרה לדף הבית
       </Link>
-
       <h1 style={styles.heading}>תנאי שימוש</h1>
       <p style={styles.paragraph}>
         ברוכים הבאים לאתר Rainbow-ASD. השימוש באתר ובשירותים המוצעים בו כפופים
         לתנאים המפורטים להלן. אנא קראו אותם בעיון.
       </p>
-
       <h2 style={styles.subHeading}>1. הגדרות</h2>
       <p style={styles.paragraph}>המשתמש: כל אדם או גוף המשתמש בשירותי האתר.</p>
       <p style={styles.paragraph}>
@@ -72,37 +84,35 @@ const TermsOfService = () => {
       <p style={styles.paragraph}>
         האתר: האתר הרשמי של Rainbow-ASD בכתובת https://rainbow-asd.com.
       </p>
-
       <h2 style={styles.subHeading}>2. קבלת תנאי השימוש</h2>
       <p style={styles.paragraph}>
         השימוש באתר ובשירותים המוצעים בו מעיד על הסכמתך המלאה והבלתי מותנית
         לתנאים אלה.
       </p>
-
       <h2 style={styles.subHeading}>3. זכויות יוצרים</h2>
       <p style={styles.paragraph}>
         כל התוכן באתר, כולל טקסטים, תמונות, גרפיקה, ויישומים, מוגן בזכויות
         יוצרים. אין להעתיק, לשכפל, להפיץ או להשתמש בתוכן האתר ללא אישור מראש
         ובכתב.
       </p>
-
       <h2 style={styles.subHeading}>4. פרטיות</h2>
       <p style={styles.paragraph}>
         פרטי המשתמשים נאספים ומטופלים בהתאם למדיניות הפרטיות של האתר, המפורטת
         להלן.
       </p>
-
       <h2 style={styles.subHeading}>5. הגבלת אחריות</h2>
       <p style={styles.paragraph}>
         האתר מספק שירותים מקצועיים בתחום האוטיזם. עם זאת, אין לראות בשירותים אלה
         תחליף לייעוץ רפואי או פסיכולוגי.
       </p>
-
       <h2 style={styles.subHeading}>6. שינויים בתנאים</h2>
       <p style={styles.paragraph}>
         האתר שומר לעצמו את הזכות לשנות את תנאי השימוש מעת לעת. השינויים ייכנסו
         לתוקף מיד עם פרסומם באתר.
       </p>
+      <Link href='#top' style={styles.buttontop}>
+        <FaArrowAltCircleUp />
+      </Link>
     </div>
   )
 }

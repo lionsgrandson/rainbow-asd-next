@@ -1,6 +1,8 @@
 // components/PrivacyPolicy.js
 import React from 'react'
 import Link from 'next/link'
+import { FaArrowAltCircleUp } from 'react-icons/fa'
+
 const PrivacyPolicy = () => {
   const styles = {
     container: {
@@ -28,6 +30,18 @@ const PrivacyPolicy = () => {
       fontSize: '2.2rem',
       marginBottom: '1rem',
     },
+    buttontop: {
+      position: 'fixed',
+      bottom: '1rem',
+      right: '1rem',
+      height: 'fit-content',
+      padding: '0.5rem',
+      display: 'flex',
+      borderRadius: '20%',
+      fontSize: '5rem',
+      textAlign: 'center',
+      zIndex: '1',
+    },
     button: {
       position: 'fixed',
       top: '1rem',
@@ -47,6 +61,7 @@ const PrivacyPolicy = () => {
 
   return (
     <div style={styles.container}>
+      <div id='top'></div>
       <Link
         href='/'
         style={styles.button}
@@ -60,7 +75,6 @@ const PrivacyPolicy = () => {
         Rainbow-ASD מחויבת לשמירה על פרטיות המשתמשים. מדיניות פרטיות זו מפרטת
         כיצד אנו אוספים, משתמשים ומגנים על המידע האישי שלך.
       </p>
-
       <h2 style={styles.subHeading}>1. המידע שאנו אוספים</h2>
       <p style={styles.paragraph}>
         בעת השימוש באתר, אנו עשויים לאסוף את המידע הבא:
@@ -69,30 +83,29 @@ const PrivacyPolicy = () => {
         - פרטי קשר (שם, טלפון, דוא"ל) לצורך יצירת קשר.
       </p>
       <p style={styles.paragraph}>- מידע על השירותים בהם אתה מתעניין.</p>
-
       <h2 style={styles.subHeading}>2. שימוש במידע</h2>
       <p style={styles.paragraph}>המידע שנאסף משמש לצורך:</p>
       <p style={styles.paragraph}>- מתן שירותים מותאמים אישית.</p>
       <p style={styles.paragraph}>- יצירת קשר עם המשתמש.</p>
       <p style={styles.paragraph}>- שיפור השירותים המוצעים.</p>
-
       <h2 style={styles.subHeading}>3. הגנה על המידע</h2>
       <p style={styles.paragraph}>
         אנו נוקטים באמצעי זהירות סבירים כדי להגן על המידע האישי שלך מפני גישה לא
         מורשית, שינוי או חשיפה.
       </p>
-
       <h2 style={styles.subHeading}>4. שיתוף המידע</h2>
       <p style={styles.paragraph}>
         אנו לא נשתף את המידע האישי שלך עם צדדים שלישיים, אלא אם כן נדרש על פי
         חוק או בהסכמתך המפורשת.
       </p>
-
       <h2 style={styles.subHeading}>5. זכויותיך</h2>
       <p style={styles.paragraph}>
         אתה זכאי לגשת למידע האישי שלך, לעדכן אותו או לבקש למחוק אותו. לשם כך,
         אנא צור קשר באמצעות פרטי הקשר המופיעים באתר.
       </p>
+      <Link href='#top' style={styles.buttontop}>
+        <FaArrowAltCircleUp />
+      </Link>
     </div>
   )
 }

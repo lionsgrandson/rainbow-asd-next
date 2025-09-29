@@ -5,7 +5,7 @@ import heroSesh from '../../public/img/therapySesh.png'
 
 function Hero() {
   return (
-    <div className={styles.HeroSec}>
+    <div className={styles.HeroSec} id='hero'>
       <header>
         <Image
           src={Icon}

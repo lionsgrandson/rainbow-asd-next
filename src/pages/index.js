@@ -4,7 +4,10 @@ import QnaSec from '../components/QnaSec'
 import RecSec from '../components/RecSec'
 import ContactBtn from '../components/ContactBtn'
 import Footer from '../components/Footer'
+
 import styles from '../styles/index.module.css'
+import { FaArrowAltCircleUp } from 'react-icons/fa'
+import Link from 'next/link'
 import Head from 'next/head'
 export default function Home() {
   return (
@@ -59,7 +62,10 @@ export default function Home() {
           content='https://rainbow-asd.com/_next/static/media/Logo_icon_noshadow.408216b7.png'
         />
       </Head>
-
+      <div id='top'></div>
+      <Link href='#top' className={styles.button}>
+        <FaArrowAltCircleUp />
+      </Link>
       <Hero />
       <ContactSec />
       <QnaSec />
