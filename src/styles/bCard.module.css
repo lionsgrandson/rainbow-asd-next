@@ -1,3 +1,57 @@
+.bcardSec {
+  border: 1rem, solid, black;
+  width: 50%;
+  margin: 2rem auto;
+  border-radius: 5rem;
+  padding: 2rem;
+  /* padding-bottom: 2rem; */
+  display: flex;
+  flex-direction: column;
+}
+.largeLogo {
+  width: auto;
+}
+.bcardHeader {
+  font-size: 8rem;
+  text-align: center;
+  margin: 2rem auto;
+}
+.secondheaderBcard {
+  font-size: 4.5rem;
+  font-weight: normal;
+  text-align: center;
+  margin: 2rem auto;
+}
+.ulBcard {
+  list-style: none;
+  display: flex;
+  gap: 5rem;
+  justify-content: center;
+}
+.bCardLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bcardIcon {
+  background-color: blue;
+  color: white;
+  padding: 1rem;
+  border-radius: 50%;
+  width: 5rem;
+  height: auto;
+}
 .contactlist {
-  background-color: red;
+  font-size: 2rem;
+}
+.saveContact {
+  background-color: blue;
+  border-radius: 2rem;
+  color: white;
+  margin-top: 5rem;
+  width: fit-content;
+  height: 5rem;
+  font-size: 2.6rem;
+  align-self: center;
+  margin-top: 0.5;
 }
