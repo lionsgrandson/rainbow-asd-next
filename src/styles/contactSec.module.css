@@ -148,12 +148,17 @@
     align-items: center;
   }
   .ConForm {
-    width: 60%;
+    width: 100%;
   }
   .submitBTN {
     width: 28rem;
     height: auto;
     font-size: 3.2rem;
+  }
+  .input,
+  .textArea {
+    width: calc(100% - 5rem);
+    margin: 0 1.5rem;
   }
 }
 
@@ -165,12 +170,7 @@
   .textArea {
     font-size: 2rem;
   }
-  .ConForm {
-    width: 80%;
-  }
-  .sivanHeadshotContact {
-    /* width: 18rem; */
-  }
+
   .submitBTN {
     width: 24rem;
     height: auto;
@@ -182,9 +182,7 @@
   .h1Con {
     font-size: 3.6rem;
   }
-  .ConForm {
-    width: 90%;
-  }
+
   .submitBTN {
     width: 22rem;
     font-size: 2.4rem;
@@ -215,5 +213,9 @@
   .input,
   .textArea {
     font-size: 1.6rem;
+    width: calc(100% - 5rem);
+    margin: 0 1.5rem;
   }
+  /* conDit {
+  } */
 }

@@ -59,7 +59,10 @@ export default function ContactSec() {
   }
 
   return (
-    <section id='contact' className={styles.FirstBox}>
+    <section
+      id='contact'
+      className={(styles.FirstBox, styles.containerContact)}
+    >
       <h1 className={styles.h1Con}>צור קשר</h1>
       <div className={styles.contactContent}>
         <form className={styles.ConForm} onSubmit={handleSubmit}>
