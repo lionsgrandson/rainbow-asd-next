@@ -9,6 +9,7 @@ import styles from '../styles/index.module.css'
 import { FaArrowAltCircleUp } from 'react-icons/fa'
 import Link from 'next/link'
 import Head from 'next/head'
+import Bcard from '@/components/BcardSec'
 export default function Home() {
   return (
     <main className={styles.FirstBox}>
@@ -66,6 +67,7 @@ export default function Home() {
       <Link href='#top' className={styles.button}>
         <FaArrowAltCircleUp />
       </Link>
+      <Bcard />
       <Hero />
       <ContactSec />
       <QnaSec />
