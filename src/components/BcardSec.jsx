@@ -4,7 +4,7 @@ import largeLogo from '../../public/img/Logo_with_NO_shadow_wide.png'
 import Link from 'next/link'
 import { MdEmail } from 'react-icons/md'
 
-import { FaPhoneAlt, FaWhatsapp } from 'react-icons/fa'
+import { FaPhoneAlt, FaWhatsapp, FaFacebook, FaWaze } from 'react-icons/fa'
 
 export default function Bcard() {
   return (
@@ -39,12 +39,25 @@ export default function Bcard() {
         {/* <li className={Styles.contactlist}>
           <Link href=''>אינסטגרם</Link>
         </li>
+        */}
         <li className={Styles.contactlist}>
-          <Link href=''>פייסבוק</Link>
+          <Link
+            className={Styles.bCardLink}
+            href='https://www.facebook.com/sivan.levanon.3/'
+          >
+            <FaFacebook className={Styles.bcardIcon} />
+            פייסבוק
+          </Link>
         </li>
         <li className={Styles.contactlist}>
-          <Link href=''>waze</Link>
-        </li> */}
+          <Link
+            className={Styles.bCardLink}
+            href='https://www.waze.com/en/live-map/directions/il/tel-aviv-district/kiryat-ono/tzahal-st-115?to=place.EiFUemFoYWwgU3QgMTE1LCBLaXJ5YXQgT25vLCBJc3JhZWwiMBIuChQKEgmzkki3gDUdFRFpZOZsDsrHKBBzKhQKEgmJ4u_KeEodFRFa3lldjTEFoA'
+          >
+            <FaWaze className={Styles.bcardIcon} />
+            waze
+          </Link>
+        </li>
       </ul>
       <button className={Styles.saveContact}>שמירה באנשי קשר</button>
     </section>
