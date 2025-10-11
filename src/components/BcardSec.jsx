@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Styles from '@/styles/bCard.module.css'
 import largeLogo from '../../public/img/Logo_with_NO_shadow_wide.png'
+import SmallLogo from '../../public/img/Logo_icon_noshadow.png'
 import Link from 'next/link'
 import { MdEmail } from 'react-icons/md'
 
@@ -10,6 +11,7 @@ export default function Bcard() {
   return (
     <section className={Styles.bcardSec}>
       <Image src={largeLogo} className={Styles.largeLogo} />
+      <Image src={SmallLogo} className={Styles.SmallLogo} />
       <h1 className={Styles.bcardHeader}>סיוון ורונסקי</h1>
       <h2 className={Styles.secondheaderBcard}>
         פסיכותרפיסטית קוגנטיבית התנהגותית CBT

@@ -1,23 +1,35 @@
 .bcardSec {
-  border: 1rem, solid, black;
-  width: 50%;
-  margin: 2rem auto;
+  border: calc(100vw / 200), solid, black;
+
+  margin: 2rem;
   border-radius: 5rem;
+
   padding: 2rem;
-  /* padding-bottom: 2rem; */
+  align-items: center;
+  flex-wrap: nowrap;
   display: flex;
   flex-direction: column;
 }
 .largeLogo {
-  width: auto;
+  width: initial;
+  display: flex;
+  height: auto;
+}
+.SmallLogo {
+  display: none;
+  width: initial;
+
+  height: auto;
 }
 .bcardHeader {
-  font-size: 8rem;
+  /* font-size: 8rem; */
+  font-size: calc(100vw / 10);
   text-align: center;
   margin: 2rem auto;
 }
 .secondheaderBcard {
-  font-size: 4.5rem;
+  /* font-size: 4.5rem; */
+  font-size: calc(100vw / 20);
   font-weight: normal;
   text-align: center;
   margin: 2rem auto;
@@ -25,6 +37,7 @@
 .ulBcard {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   gap: 5rem;
   justify-content: center;
 }
@@ -50,8 +63,83 @@
   color: white;
   margin-top: 5rem;
   width: fit-content;
-  height: 5rem;
-  font-size: 2.6rem;
+  height: auto;
+  font-size: 5vw;
   align-self: center;
   margin-top: 0.5;
+}
+
+@media (max-width: 800px) {
+  .SmallLogo {
+    display: block;
+
+    width: calc(100% - 60vw);
+  }
+  .largeLogo {
+    display: none;
+  }
+}
+@media (max-width: 750px) {
+  .ulBcard {
+    gap: 2rem;
+    padding: 0;
+    margin: 0;
+  }
+}
+@media (max-width: 556px) {
+  .ulBcard {
+    gap: 2.5rem;
+    padding: 0;
+    margin: 0;
+  }
+  .bcardIcon {
+    padding: 1rem;
+    border-radius: 50%;
+    width: 2.8rem;
+    height: auto;
+  }
+  .contactlist {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 520px) {
+  .ulBcard {
+    gap: 1.5rem;
+    padding: 0;
+    margin: 0;
+  }
+  .bcardIcon {
+    padding: 1rem;
+    border-radius: 50%;
+    width: 2rem;
+    height: auto;
+  }
+  .contactlist {
+    font-size: 1.5rem;
+  }
+  .bcardHeader {
+    font-size: calc(100vw / 15);
+    margin: 0;
+  }
+  .secondheaderBcard {
+    font-size: calc(100vw / 20);
+    margin: 2rem 0;
+  }
+  .SmallLogo {
+    width: calc(100% - 40vw);
+  }
+}
+@media (max-width: 420px) {
+  .ulBcard {
+    gap: 1.5rem;
+  }
+  .bcardIcon {
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 1.5rem;
+    height: auto;
+  }
+  .contactlist {
+    font-size: 1.3rem;
+  }
 }
