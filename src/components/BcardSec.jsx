@@ -16,6 +16,7 @@ export default function Bcard() {
       <h2 className={Styles.secondheaderBcard}>
         פסיכותרפיסטית קוגנטיבית התנהגותית CBT
       </h2>
+
       <ul className={Styles.ulBcard}>
         <li className={Styles.contactlist}>
           <Link className={Styles.bCardLink} href='tel:+972546495902'>

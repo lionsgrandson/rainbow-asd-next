@@ -1,13 +1,14 @@
 .bcardSec {
   border: calc(100vw / 200), solid, black;
 
-  margin: 2rem;
+  margin: 2rem auto;
   border-radius: 5rem;
 
   padding: 2rem;
   align-items: center;
   flex-wrap: nowrap;
   display: flex;
+  width: 50%;
   flex-direction: column;
 }
 .largeLogo {
@@ -23,13 +24,13 @@
 }
 .bcardHeader {
   /* font-size: 8rem; */
-  font-size: calc(100vw / 10);
+  font-size: calc(100vw / 15);
   text-align: center;
   margin: 2rem auto;
 }
 .secondheaderBcard {
   /* font-size: 4.5rem; */
-  font-size: calc(100vw / 20);
+  font-size: calc(100vw / 40);
   font-weight: normal;
   text-align: center;
   margin: 2rem auto;
@@ -38,7 +39,7 @@
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 5rem;
+  gap: calc(100vw / 50);
   justify-content: center;
 }
 .bCardLink {
@@ -51,7 +52,7 @@
   color: white;
   padding: 1rem;
   border-radius: 50%;
-  width: 5rem;
+  width: calc(100vw / 50);
   height: auto;
 }
 .contactlist {
@@ -62,9 +63,9 @@
   border-radius: 2rem;
   color: white;
   margin-top: 5rem;
-  width: fit-content;
+  /* width: calc(100vw / 10); */
   height: auto;
-  font-size: 5vw;
+  font-size: calc(10vw / 4);
   align-self: center;
   margin-top: 0.5;
 }
