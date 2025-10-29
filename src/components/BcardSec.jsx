@@ -7,6 +7,36 @@ import { MdEmail } from 'react-icons/md'
 
 import { FaPhoneAlt, FaWhatsapp, FaFacebook, FaWaze } from 'react-icons/fa'
 
+const generateVCard = (contact) => {
+  const vCardData = `
+BEGIN:VCARD
+VERSION:3.0
+FN:${contact.name}
+EMAIL:${contact.email}
+TEL:${contact.tel}
+ADR:${contact.address}
+END:VCARD
+`
+  return vCardData
+}
+const contactData = {
+  name: 'סיוון ורונסקי',
+  email: 'levanonski@gmail.com',
+  tel: '+972546495902',
+  address: 'Tzahal St 115 Kiryat Ono, israel',
+}
+function generateAVcard() {
+  const vCardData = generateVCard(contactData)
+  const blob = new Blob([vCardData], { type: 'text/vcard' })
+  const url = window.URL.createObjectURL(blob)
+  const a = document.createElement('a')
+  a.style.display = 'none'
+  a.href = url
+  a.download = `${contact.name}.vcf`
+  document.body.appendChild(a)
+  a.click()
+  window.URL.revokeObjectURL(url)
+}
 export default function Bcard() {
   return (
     <section className={Styles.bcardSec}>
@@ -62,7 +92,9 @@ export default function Bcard() {
           </Link>
         </li>
       </ul>
-      <button className={Styles.saveContact}>שמירה באנשי קשר</button>
+      <button className={Styles.saveContact} onClick={generateAVcard}>
+        שמירה באנשי קשר
+      </button>
     </section>
   )
 }
