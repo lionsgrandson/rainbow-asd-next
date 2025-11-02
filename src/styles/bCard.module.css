@@ -128,7 +128,9 @@
     margin: 2rem 0;
   }
   .SmallLogo {
-    width: calc(100% - 40vw);
+    /* width: calc(100% - 40vw); */
+    width: 12rem;
+    height: 12rem;
   }
 }
 @media (max-width: 420px) {
