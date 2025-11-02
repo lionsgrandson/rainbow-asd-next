@@ -67,7 +67,7 @@ export default function Home() {
       <Link href='#top' className={styles.button}>
         <FaArrowAltCircleUp />
       </Link>
-      <Bcard />
+      {/* <Bcard /> */}
       <Hero />
       <ContactSec />
       <QnaSec />
