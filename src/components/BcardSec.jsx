@@ -20,7 +20,7 @@ END:VCARD
   return vCardData
 }
 const contactData = {
-  name: 'סיוון ורונסקי',
+  name: 'סיון ורונסקי',
   email: 'levanonski@gmail.com',
   tel: '+972546495902',
   address: 'Tzahal St 115 Kiryat Ono, israel',
