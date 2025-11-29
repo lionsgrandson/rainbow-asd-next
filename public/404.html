@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 | דף לא נמצא | rainbow-asd.com</title>
+    <link rel="stylesheet" href="/app.css" />
+    <link rel="stylesheet" href="/globals.css" />
+    <style>
+      /* Embedding key styles for error pages */
+      .error-body {
+        /* Applying the animated gradient background style from app.css */
+        background-image: linear-gradient(
+          45deg,
+          #beffab,
+          #abff5d9e,
+          #ff91a9,
+          #9900ffdb
+        );
+        background-size: 200% 200%;
+        animation: gradientShift 12s ease infinite;
+        display: flex; /* Use flexbox to center content vertically */
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh; /* Ensure it takes full viewport height */
+        margin: 0;
+        padding: 20px; /* Add some padding around the container */
+        box-sizing: border-box; /* Include padding in element's total width and height */
+      }
+      @keyframes gradientShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      .error-container {
+        text-align: center;
+        max-width: 800px;
+        width: 100%; /* Ensure it takes full available width */
+        padding: 3rem 2rem; /* More padding */
+        /* Mimicking the FirstBox style with slight opacity */
+        background-color: #f5f5f5cc;
+        border-radius: 2.4rem;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+          'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+          'Helvetica Neue', sans-serif;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      /* --- NEW STYLES FOR ANIMATED TEXT --- */
+      .error-code {
+        font-size: 12rem; /* Larger font for impact */
+        margin: 0.2em 0 0.1em; /* Adjust margins for top alignment */
+        line-height: 1;
+        font-weight: bold;
+
+        /* Apply the gradient as text fill */
+        background-image: linear-gradient(
+          45deg,
+          #beffab,
+          #abff5d9e,
+          #ff91a9,
+          #9900ffdb
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 400% 400%; /* Make gradient larger for more movement */
+        animation: gradientShiftText 15s ease infinite; /* New animation for text */
+      }
+
+      @keyframes gradientShiftText {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      /* --- END NEW STYLES --- */
+
+      .error-message {
+        color: #ff91a9; /* Pink from the gradient */
+        margin-top: 0;
+        font-size: 3rem; /* Slightly larger */
+      }
+      .error-description {
+        font-size: 2rem; /* Slightly larger */
+        color: #333; /* A neutral dark color */
+      }
+      .error-link {
+        font-size: 2rem; /* Slightly larger */
+        color: #9900ffdb; /* Deep purple from the gradient */
+        text-decoration: underline;
+        font-weight: bold;
+        margin-top: 20px;
+        display: inline-block; /* Allows top margin to work */
+      }
+    </style>
+  </head>
+  <body class="error-body">
+    <div class="error-container">
+      <h1 class="error-code">404</h1>
+      <h2 class="error-message">אופס! הדף שחיפשת אינו קיים.</h2>
+      <p class="error-description">נראה שהקישור שגוי או שהדף הועבר.</p>
+
+      <p class="error-description">
+        חזור לדף הבית:<br />
+        <a href="/" class="error-link">לחצו כאן</a>
+      </p>
+    </div>
+  </body>
+</html>

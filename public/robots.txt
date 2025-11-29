@@ -1,4 +1,4 @@
 User-agent: *
-Disallow:
+**Disallow: /**
 
 Sitemap: https://rainbow-asd.com/sitemap.xml
