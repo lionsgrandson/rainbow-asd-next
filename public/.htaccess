@@ -28,7 +28,8 @@ AddDefaultCharset UTF-8
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteCond %{HTTPS} off
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+    RewriteCond %{HTTPS} off [OR]
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
 
