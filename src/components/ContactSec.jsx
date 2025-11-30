@@ -1,92 +1,99 @@
 // src/components/ContactSec.jsx
-'use client'
-import Image from 'next/image'
-import styles from '../styles/contactSec.module.css'
-
-import sivanHeadshot from '../../public/img/sivanHeadShot.png.png'
-import { useState, useEffect } from 'react'
-import emailjs from '@emailjs/browser'
-
+"use client";
+import Image from "next/image";
+import styles from "../styles/contactSec.module.css";
+import sivanHeadshot from "../../public/img/sivanHeadShot.png.png";
+import { useState, useEffect } from "react";
+import emailjs from "@emailjs/browser";
+// export async function getStaticProps() {
+//   const emailEnv = await {
+//     privateKeyEnv: process.env.PRIVATE_EMAILJS_KEY,
+//     serviceIdEnv: process.env.SERVICE_ID,
+//     templateIdEnv: process.env.TEMPLATE_ID,
+//   };
+// }
 export default function ContactSec() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  })
+    name: "",
+    email: "",
+    message: "",
+  });
+
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
-  }
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
   useEffect(() => {
-    emailjs.init('yTbjwZK0qB7HOauXe')
-  }, [])
+    emailjs.init(process.env.PRIVATE_EMAILJS_KEY);
+  }, []);
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    setError('')
-    setSuccess('')
+    e.preventDefault();
+    setError("");
+    setSuccess("");
 
     if (!name || !email || !phone || !message) {
-      setError('חובה למלא את כל השדות')
-      return
+      setError("חובה למלא את כל השדות");
+      return;
     }
     if (!/\S+@\S+\.\S+/.test(email)) {
-      setError('הכתובת מייל לא תקין')
-      return
+      setError("הכתובת מייל לא תקין");
+      return;
     }
 
-    const serviceId = 'service_ezfr8lr'
-    const templateId = 'template_7hci6xd'
+    const serviceId = process.env.SERVICE_ID;
+    const templateId = process.env.TEMPLATE_ID;
 
     try {
-      setLoading(true)
+      setLoading(true);
       await emailjs.send(serviceId, templateId, {
         name,
         email,
         phone,
         message,
-      })
-      setSuccess('האימייל נשלח בהצלחה!')
-      setName('')
-      setEmail('')
-      setPhone('')
-      setMessage('')
+      });
+      console.log(process.env.PRIVATE_EMAILJS_KEY);
+      setSuccess("האימייל נשלח בהצלחה!");
+      setName("");
+      setEmail("");
+      setPhone("");
+      setMessage("");
     } catch (err) {
-      setError('שליחת האימייל נכשלה. אנא נסה שוב')
-      console.error('שגיאת מערכת', err)
+      setError("שליחת האימייל נכשלה. אנא נסה שוב");
+      console.error("שגיאת מערכת", err);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   return (
     <section
-      id='contact'
+      id="contact"
       className={(styles.FirstBox, styles.containerContact)}
     >
       <h1 className={styles.h1Con}>צור קשר</h1>
       <div className={styles.contactContent}>
         <form className={styles.ConForm} onSubmit={handleSubmit}>
           <input
-            type='text'
-            name='name'
-            placeholder='שם מלא'
+            type="text"
+            name="name"
+            placeholder="שם מלא"
             className={styles.input}
             value={formData.name}
             onChange={handleChange}
             required
           />
           <input
-            type='email'
-            name='email'
+            type="email"
+            name="email"
             className={styles.input}
-            placeholder='אימייל'
+            placeholder="אימייל"
             value={formData.email}
             onChange={handleChange}
             required
           />
           <textarea
-            name='message'
-            placeholder='הודעה'
+            name="message"
+            placeholder="הודעה"
             className={styles.textArea}
             value={formData.message}
             onChange={handleChange}
@@ -97,14 +104,14 @@ export default function ContactSec() {
         <div className={styles.midContactSec}>
           <Image
             src={sivanHeadshot}
-            alt='סיון - תמונת פרופיל'
+            alt="סיון - תמונת פרופיל"
             className={styles.sivanHeadshotContact}
           />
           <button
-            type='submit'
+            type="submit"
             onClick={handleSubmit}
             className={styles.submitBTN}
-            form='contactForm'
+            form="contactForm"
           >
             שלח
           </button>
@@ -121,5 +128,5 @@ export default function ContactSec() {
         </div>
       </div>
     </section>
-  )
+  );
 }
