@@ -7,6 +7,8 @@ import { useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 
 export default function ContactSec() {
+  const [errorMSG, setError] = useState();
+  const [successMSG, setSuccess] = useState();
   const [formData, setFormData] = useState({
     fName: "",
     fEmail: "",
@@ -22,21 +24,28 @@ export default function ContactSec() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // setError("");
-    // setSuccess("");
+    setError("");
+    setSuccess("");
 
     if (!formData.fName || !formData.fEmail || !formData.fMessage) {
-      // setError("חובה למלא את כל השדות");
-      alert("חובה למלא את כל השדות");
-      console.log(!formData.fName + " name " + formData.fName);
-      console.log(!formData.fEmail + " email " + formData.fEmail);
-      console.log(!formData.fMessage + " message " + +formData.fMessage);
-
+      setError("חובה למלא את כל השדות");
+      const timerId = setTimeout(() => {
+        setError("");
+      }, 2000);
+      return () => {
+        clearTimeout(timerId);
+      };
       return;
     }
     if (!/\S+@\S+\.\S+/.test(formData.fEmail)) {
-      // setError("הכתובת מייל לא תקין");
-      alert("הכתובת מייל לא תקין");
+      setError("הכתובת מייל לא תקין");
+      const timerId = setTimeout(() => {
+        setError("");
+      }, 2000);
+      return () => {
+        clearTimeout(timerId);
+      };
+
       return;
     }
 
@@ -48,22 +57,28 @@ export default function ContactSec() {
 
     try {
       // setLoading(true); // TODO later on use this to show error messages
-      await emailjs.send(serviceId, templateId, {
-        sName,
-        sEmail,
-        sMessage,
-      });
+      // await emailjs.send(serviceId, templateId, {
+      //   sName,
+      //   sEmail,
+      //   sMessage,
+      // });
 
-      // setSuccess("האימייל נשלח בהצלחה!");
-      alert("האימייל נשלח בהצלחה!");
-      // setName("");
-      // setEmail("");
-      // setPhone("");
-      // setMessage("");
+      setSuccess("האימייל נשלח בהצלחה!");
+      const timerId = setTimeout(() => {
+        setSuccess("");
+      }, 2000);
+      return () => {
+        clearTimeout(timerId);
+      };
     } catch (err) {
-      // setError("שליחת האימייל נכשלה. אנא נסה שוב");
-      alert("שליחת האימייל נכשלה. אנא נסה שוב" + err);
-      console.error("שגיאת מערכת", err);
+      setError("שליחת האימייל נכשלה. אנא נסה שוב");
+
+      const timerId = setTimeout(() => {
+        setError("");
+      }, 2000);
+      return () => {
+        clearTimeout(timerId);
+      };
     } finally {
       // setLoading(false);
     }
@@ -104,8 +119,8 @@ export default function ContactSec() {
             onChange={handleChange}
             required
           />
+          <label>{errorMSG === "" ? successMSG : errorMSG}</label>
         </form>
-
         <div className={styles.midContactSec}>
           <Image
             src={sivanHeadshot}
