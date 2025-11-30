@@ -5,7 +5,7 @@ import styles from "../styles/contactSec.module.css";
 import sivanHeadshot from "../../public/img/sivanHeadShot.png.png";
 import { useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
-import { useForm } from "react-hook-form";
+// import { useForm } from "react-hook-form";
 
 // export async function getStaticProps() {
 //   const emailEnv = await {
@@ -30,15 +30,20 @@ export default function ContactSec() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");
-    setSuccess("");
+    console.log(process.env.SERVICE_ID + " serviecID");
+    console.log(process.env.TEMPLATE_ID + " templateID");
+    console.log(process.env.PRIVATE_EMAILJS_KEY + " private");
+    // setError("");
+    // setSuccess("");
 
     if (!name || !email || !phone || !message) {
-      setError("חובה למלא את כל השדות");
+      // setError("חובה למלא את כל השדות");
+      alert("חובה למלא את כל השדות");
       return;
     }
     if (!/\S+@\S+\.\S+/.test(email)) {
-      setError("הכתובת מייל לא תקין");
+      // setError("הכתובת מייל לא תקין");
+      alert("הכתובת מייל לא תקין");
       return;
     }
 
@@ -53,14 +58,16 @@ export default function ContactSec() {
         phone,
         message,
       });
-      console.log(process.env.PRIVATE_EMAILJS_KEY);
+
       setSuccess("האימייל נשלח בהצלחה!");
-      setName("");
-      setEmail("");
-      setPhone("");
-      setMessage("");
+      alert("האימייל נשלח בהצלחה!");
+      // setName("");
+      // setEmail("");
+      // setPhone("");
+      // setMessage("");
     } catch (err) {
       setError("שליחת האימייל נכשלה. אנא נסה שוב");
+      alert("שליחת האימייל נכשלה. אנא נסה שוב");
       console.error("שגיאת מערכת", err);
     } finally {
       setLoading(false);
