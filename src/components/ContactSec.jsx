@@ -5,15 +5,7 @@ import styles from "../styles/contactSec.module.css";
 import sivanHeadshot from "../../public/img/sivanHeadShot.png.png";
 import { useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
-// import { useForm } from "react-hook-form";
 
-// export async function getStaticProps() {
-//   const emailEnv = await {
-//     privateKeyEnv: process.env.PRIVATE_EMAILJS_KEY,
-//     serviceIdEnv: process.env.SERVICE_ID,
-//     templateIdEnv: process.env.TEMPLATE_ID,
-//   };
-// }
 export default function ContactSec() {
   const [formData, setFormData] = useState({
     fName: "",
@@ -25,7 +17,7 @@ export default function ContactSec() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   useEffect(() => {
-    emailjs.init(process.env.PRIVATE_EMAILJS_KEY);
+    emailjs.init(process.env.PUBLIC_EMAILJS_KEY);
   }, []);
 
   const handleSubmit = async (e) => {
@@ -62,7 +54,7 @@ export default function ContactSec() {
         sMessage,
       });
 
-      setSuccess("האימייל נשלח בהצלחה!");
+      // setSuccess("האימייל נשלח בהצלחה!");
       alert("האימייל נשלח בהצלחה!");
       // setName("");
       // setEmail("");
