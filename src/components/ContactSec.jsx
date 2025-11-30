@@ -5,6 +5,8 @@ import styles from "../styles/contactSec.module.css";
 import sivanHeadshot from "../../public/img/sivanHeadShot.png.png";
 import { useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
+import { useForm } from "react-hook-form";
+
 // export async function getStaticProps() {
 //   const emailEnv = await {
 //     privateKeyEnv: process.env.PRIVATE_EMAILJS_KEY,
