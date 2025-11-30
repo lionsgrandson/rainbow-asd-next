@@ -55,7 +55,7 @@ export default function ContactSec() {
     let sMessage = formData.fMessage;
 
     try {
-      setLoading(true);
+      // setLoading(true); // TODO later on use this to show error messages
       await emailjs.send(serviceId, templateId, {
         sName,
         sEmail,
@@ -70,7 +70,7 @@ export default function ContactSec() {
       // setMessage("");
     } catch (err) {
       // setError("שליחת האימייל נכשלה. אנא נסה שוב");
-      alert("שליחת האימייל נכשלה. אנא נסה שוב");
+      alert("שליחת האימייל נכשלה. אנא נסה שוב" + err);
       console.error("שגיאת מערכת", err);
     } finally {
       // setLoading(false);
