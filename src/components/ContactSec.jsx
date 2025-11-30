@@ -69,11 +69,11 @@ export default function ContactSec() {
       // setPhone("");
       // setMessage("");
     } catch (err) {
-      setError("שליחת האימייל נכשלה. אנא נסה שוב");
+      // setError("שליחת האימייל נכשלה. אנא נסה שוב");
       alert("שליחת האימייל נכשלה. אנא נסה שוב");
       console.error("שגיאת מערכת", err);
     } finally {
-      setLoading(false);
+      // setLoading(false);
     }
   };
 
