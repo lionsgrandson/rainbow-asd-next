@@ -16,9 +16,9 @@ import emailjs from "@emailjs/browser";
 // }
 export default function ContactSec() {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
+    fName: "",
+    fEmail: "",
+    fMessage: "",
   });
 
   const handleChange = (e) => {
@@ -30,18 +30,19 @@ export default function ContactSec() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(process.env.SERVICE_ID + " serviecID");
-    console.log(process.env.TEMPLATE_ID + " templateID");
-    console.log(process.env.PRIVATE_EMAILJS_KEY + " private");
     // setError("");
     // setSuccess("");
 
-    if (!name || !email || !phone || !message) {
+    if (!formData.fName || !formData.fEmail || !formData.fMessage) {
       // setError("חובה למלא את כל השדות");
       alert("חובה למלא את כל השדות");
+      console.log(!formData.fName + " name " + formData.fName);
+      console.log(!formData.fEmail + " email " + formData.fEmail);
+      console.log(!formData.fMessage + " message " + +formData.fMessage);
+
       return;
     }
-    if (!/\S+@\S+\.\S+/.test(email)) {
+    if (!/\S+@\S+\.\S+/.test(formData.fEmail)) {
       // setError("הכתובת מייל לא תקין");
       alert("הכתובת מייל לא תקין");
       return;
@@ -49,14 +50,16 @@ export default function ContactSec() {
 
     const serviceId = process.env.SERVICE_ID;
     const templateId = process.env.TEMPLATE_ID;
+    let sName = formData.fName;
+    let sEmail = formData.fEmail;
+    let sMessage = formData.fMessage;
 
     try {
       setLoading(true);
       await emailjs.send(serviceId, templateId, {
-        name,
-        email,
-        phone,
-        message,
+        sName,
+        sEmail,
+        sMessage,
       });
 
       setSuccess("האימייל נשלח בהצלחה!");
@@ -84,27 +87,28 @@ export default function ContactSec() {
         <form className={styles.ConForm} onSubmit={handleSubmit}>
           <input
             type="text"
-            name="name"
+            name="fName"
             placeholder="שם מלא"
             className={styles.input}
-            value={formData.name}
+            value={formData.fName}
             onChange={handleChange}
             required
           />
           <input
             type="email"
-            name="email"
+            name="fEmail"
             className={styles.input}
             placeholder="אימייל"
-            value={formData.email}
+            value={formData.fEmail}
             onChange={handleChange}
             required
           />
           <textarea
-            name="message"
+            name="fMessage"
             placeholder="הודעה"
+            type="text"
             className={styles.textArea}
-            value={formData.message}
+            value={formData.fMessage}
             onChange={handleChange}
             required
           />
