@@ -1,14 +1,12 @@
 import { FaPhoneAlt } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
 import Image from 'next/image'
-import Link from 'next/link'
 import logoLongTxt from '../../public/img/Logo_icon_noshadow.png'
 import styles from '../styles/footer.module.css'
 import { useRouter } from 'next/router'
 export default function Footer() {
   const router = useRouter()
-  const handleClick = (e, href) => {
-    e.preventDefault()
+  const handleClick = (href) => {
     router.push(href)
   }
   return (
@@ -34,12 +32,18 @@ export default function Footer() {
             <MdEmail />
           </div>
           <div className={styles.legalLinks}>
-            <Link href='/tos' onClick={() => handleClick(null, '/tos')}>
+            <button
+              className={styles.btnSty}
+              onClick={() => handleClick('/tos')}
+            >
               תנאי שימוש
-            </Link>
-            <Link href='/privacy' onClick={() => handleClick(null, '/privacy')}>
+            </button>
+            <button
+              className={styles.btnSty}
+              onClick={() => handleClick('/privacy')}
+            >
               מדיניות פרטיות
-            </Link>
+            </button>
           </div>
         </div>
       </div>
