@@ -2,11 +2,15 @@ import { FaPhoneAlt } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
 import Image from 'next/image'
 import Link from 'next/link'
-// import logoLongTxt from '../../public/img/Logo_with_NO_shadow_text.png'
 import logoLongTxt from '../../public/img/Logo_icon_noshadow.png'
 import styles from '../styles/footer.module.css'
-
+import { useRouter } from 'next/router'
 export default function Footer() {
+  const router = useRouter()
+  const handleClick = (e, href) => {
+    e.preventDefault()
+    router.push(href)
+  }
   return (
     <>
       <div className={styles.footerSec}>
@@ -30,8 +34,12 @@ export default function Footer() {
             <MdEmail />
           </div>
           <div className={styles.legalLinks}>
-            <Link href='/tos'>תנאי שימוש</Link>
-            <Link href='/privacy'>מדיניות פרטיות</Link>
+            <Link href='/tos' onClick={() => handleClick(null, '/tos')}>
+              תנאי שימוש
+            </Link>
+            <Link href='/privacy' onClick={() => handleClick(null, '/privacy')}>
+              מדיניות פרטיות
+            </Link>
           </div>
         </div>
       </div>
