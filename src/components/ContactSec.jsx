@@ -1,59 +1,59 @@
 // src/components/ContactSec.jsx
-"use client";
-import Image from "next/image";
-import styles from "../styles/contactSec.module.css";
-import sivanHeadshot from "../../public/img/sivanHeadShot.png.png";
-import { useState, useEffect } from "react";
-import emailjs from "@emailjs/browser";
+'use client'
+import Image from 'next/image'
+import styles from '../styles/contactSec.module.css'
+import sivanHeadshot from '../../public/img/sivanHeadShot.png.png'
+import { useState, useEffect } from 'react'
+import emailjs from '@emailjs/browser'
 
 export default function ContactSec() {
-  const [errorMSG, setError] = useState();
-  const [successMSG, setSuccess] = useState();
+  const [errorMSG, setError] = useState()
+  const [successMSG, setSuccess] = useState()
   const [formData, setFormData] = useState({
-    fName: "",
-    fEmail: "",
-    fMessage: "",
-  });
+    fName: '',
+    fEmail: '',
+    fMessage: '',
+  })
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
   useEffect(() => {
-    emailjs.init(process.env.PUBLIC_EMAILJS_KEY);
-  }, []);
+    emailjs.init(process.env.PUBLIC_EMAILJS_KEY)
+  }, [])
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError("");
-    setSuccess("");
+    e.preventDefault()
+    setError('')
+    setSuccess('')
 
     if (!formData.fName || !formData.fEmail || !formData.fMessage) {
-      setError("חובה למלא את כל השדות");
+      setError('חובה למלא את כל השדות')
       const timerId = setTimeout(() => {
-        setError("");
-      }, 2000);
+        setError('')
+      }, 2000)
       return () => {
-        clearTimeout(timerId);
-      };
-      return;
+        clearTimeout(timerId)
+      }
+      return
     }
     if (!/\S+@\S+\.\S+/.test(formData.fEmail)) {
-      setError("הכתובת מייל לא תקין");
+      setError('הכתובת מייל לא תקין')
       const timerId = setTimeout(() => {
-        setError("");
-      }, 2000);
+        setError('')
+      }, 2000)
       return () => {
-        clearTimeout(timerId);
-      };
+        clearTimeout(timerId)
+      }
 
-      return;
+      return
     }
 
-    const serviceId = process.env.SERVICE_ID;
-    const templateId = process.env.TEMPLATE_ID;
-    let sName = formData.fName;
-    let sEmail = formData.fEmail;
-    let sMessage = formData.fMessage;
+    const serviceId = process.env.SERVICE_ID
+    const templateId = process.env.TEMPLATE_ID
+    let sName = formData.fName
+    let sEmail = formData.fEmail
+    let sMessage = formData.fMessage
 
     try {
       // setLoading(true); // TODO later on use this to show error messages
@@ -63,75 +63,75 @@ export default function ContactSec() {
       //   sMessage,
       // });
 
-      setSuccess("האימייל נשלח בהצלחה!");
+      setSuccess('האימייל נשלח בהצלחה!')
       const timerId = setTimeout(() => {
-        setSuccess("");
-      }, 2000);
+        setSuccess('')
+      }, 2000)
       return () => {
-        clearTimeout(timerId);
-      };
+        clearTimeout(timerId)
+      }
     } catch (err) {
-      setError("שליחת האימייל נכשלה. אנא נסה שוב");
+      setError('שליחת האימייל נכשלה. אנא נסה שוב')
 
       const timerId = setTimeout(() => {
-        setError("");
-      }, 2000);
+        setError('')
+      }, 2000)
       return () => {
-        clearTimeout(timerId);
-      };
+        clearTimeout(timerId)
+      }
     } finally {
       // setLoading(false);
     }
-  };
+  }
 
   return (
     <section
-      id="contact"
+      id='contact'
       className={(styles.FirstBox, styles.containerContact)}
     >
-      <h1 className={styles.h1Con}>צור קשר</h1>
+      <h2 className={styles.h1Con}>צור קשר</h2>
       <div className={styles.contactContent}>
         <form className={styles.ConForm} onSubmit={handleSubmit}>
           <input
-            type="text"
-            name="fName"
-            placeholder="שם מלא"
+            type='text'
+            name='fName'
+            placeholder='שם מלא'
             className={styles.input}
             value={formData.fName}
             onChange={handleChange}
             required
           />
           <input
-            type="email"
-            name="fEmail"
+            type='email'
+            name='fEmail'
             className={styles.input}
-            placeholder="אימייל"
+            placeholder='אימייל'
             value={formData.fEmail}
             onChange={handleChange}
             required
           />
           <textarea
-            name="fMessage"
-            placeholder="הודעה"
-            type="text"
+            name='fMessage'
+            placeholder='הודעה'
+            type='text'
             className={styles.textArea}
             value={formData.fMessage}
             onChange={handleChange}
             required
           />
-          <label>{errorMSG === "" ? successMSG : errorMSG}</label>
+          <label>{errorMSG === '' ? successMSG : errorMSG}</label>
         </form>
         <div className={styles.midContactSec}>
           <Image
             src={sivanHeadshot}
-            alt="סיון - תמונת פרופיל"
+            alt='סיון - תמונת פרופיל'
             className={styles.sivanHeadshotContact}
           />
           <button
-            type="submit"
+            type='submit'
             onClick={handleSubmit}
             className={styles.submitBTN}
-            form="contactForm"
+            form='contactForm'
           >
             שלח
           </button>
@@ -148,5 +148,5 @@ export default function ContactSec() {
         </div>
       </div>
     </section>
-  );
+  )
 }

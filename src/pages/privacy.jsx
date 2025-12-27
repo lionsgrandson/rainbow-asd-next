@@ -1,4 +1,4 @@
-// components/PrivacyPolicy.js
+import Head from 'next/head'
 import React from 'react'
 import Link from 'next/link'
 import { FaArrowAltCircleUp } from 'react-icons/fa'
@@ -61,6 +61,11 @@ const PrivacyPolicy = () => {
 
   return (
     <div style={styles.container}>
+      <Head>
+        <title>מדיניות פרטיות - Rainbow-ASD</title>
+        <meta name='description' content='מדיניות פרטיות - Rainbow ASD' />
+        <link rel='canonical' href='https://www.rainbow-asd.com/privacy' />
+      </Head>
       <div id='top'></div>
       <Link
         href='/'

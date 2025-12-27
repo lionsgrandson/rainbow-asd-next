@@ -1,7 +1,7 @@
-// components/TermsOfService.js
 import React from 'react'
 import Link from 'next/link'
 import { FaArrowAltCircleUp } from 'react-icons/fa'
+import Head from 'next/head'
 
 const TermsOfService = () => {
   const styles = {
@@ -61,6 +61,11 @@ const TermsOfService = () => {
 
   return (
     <div style={styles.container}>
+      <Head>
+        <title>תנאי שימוש - Rainbow-ASD</title>
+        <meta name='description' content='תנאי שימוש - Rainbow ASD' />
+        <link rel='canonical' href='https://www.rainbow-asd.com/tos' />
+      </Head>
       <div id='top'></div>
       <Link
         href='/'

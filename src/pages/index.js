@@ -16,9 +16,14 @@ export default function Home() {
       <Head>
         {/* Primary Meta Tags */}
         {/* <!-- Primary Meta Tags --> */}
+        <meta
+          name='google-site-verification'
+          content='uZoWhNZLcOSIykKg17oSR5_C0tcDTr8IcnrjGAjY0FQ'
+        />
         <title>
           הנחייה אישית - לשילוב יחידני ולמתבגרים ובוגרים על הרצף האוטיסטי
         </title>
+        <link rel='canonical' href='https://www.rainbow-asd.com/' />
         <meta
           name='title'
           content='הנחייה אישית - לשילוב יחידני ולמתבגרים ובוגרים על הרצף האוטיסטי'
