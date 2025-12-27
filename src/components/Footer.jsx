@@ -34,13 +34,13 @@ export default function Footer() {
           <div className={styles.legalLinks}>
             <button
               className={styles.btnSty}
-              onClick={() => handleClick('/tos')}
+              onClick={() => handleClick('/tos.html')}
             >
               תנאי שימוש
             </button>
             <button
               className={styles.btnSty}
-              onClick={() => handleClick('/privacy')}
+              onClick={() => handleClick('/privacy.html')}
             >
               מדיניות פרטיות
             </button>

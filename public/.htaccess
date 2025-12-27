@@ -38,6 +38,10 @@ AddDefaultCharset UTF-8
 ErrorDocument 404 /404.html
 ErrorDocument 403 /403.html
 ErrorDocument 500 /500.html
+
+
+Redirect 303 /tos /tos.html
+Redirect 303 /privacy /privacy.html
 <IfModule mod_deflate.c>
     SetOutputFilter DEFLATE
     BrowserMatch ^Mozilla/4 gzip-only-text/html
