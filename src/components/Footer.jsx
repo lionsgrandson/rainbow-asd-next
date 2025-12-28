@@ -4,6 +4,7 @@ import Image from 'next/image'
 import logoLongTxt from '../../public/img/Logo_icon_noshadow.png'
 import styles from '../styles/footer.module.css'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 export default function Footer() {
   const router = useRouter()
   const handleClick = (href) => {
@@ -47,7 +48,19 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className={styles.copyRight}>© 2024 Raindbow ASD</div>
+      <div className={styles.copyRightSec}>
+        <div className={styles.copyRight}>© 2024 Raindbow ASD</div>
+        <div className={styles.copyRight}>
+          Designed and Developed by{' '}
+          <Link
+            target='_blank'
+            href='https://mosheschwartzberg.com'
+            alt='CodeCrafter'
+          >
+            CodeCrafter
+          </Link>
+        </div>
+      </div>
     </>
   )
 }

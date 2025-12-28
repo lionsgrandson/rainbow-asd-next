@@ -10,18 +10,19 @@ import { FaArrowAltCircleUp } from 'react-icons/fa'
 import Link from 'next/link'
 import Head from 'next/head'
 import Bcard from '@/components/BcardSec'
+import { Html } from 'next/document'
 
 export default function Home() {
   return (
     <main className={styles.FirstBox}>
       <Head>
+        <Html lang='he' />
         {/* Primary Meta Tags */}
         {/* <!-- Primary Meta Tags --> */}
         <meta
           name='google-site-verification'
           content='uZoWhNZLcOSIykKg17oSR5_C0tcDTr8IcnrjGAjY0FQ'
         />
-
         <title>
           הנחייה אישית - לשילוב יחידני ולמתבגרים ובוגרים על הרצף האוטיסטי
         </title>
@@ -50,7 +51,6 @@ export default function Home() {
           property='og:image'
           content='https://rainbow-asd.com/_next/static/media/Logo_icon_noshadow.408216b7.png'
         />
-
         {/* <!-- X (Twitter) --> */}
         <meta property='twitter:card' content='summary_large_image' />
         <meta
