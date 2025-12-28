@@ -1,6 +1,6 @@
 // import '../styles/App.css'
 import styles from '../styles/recBox.module.css'
-import logo from '../../public/img/Logo_icon_noshadow.png'
+import logo from '../../public/img/Logo_recBox.png'
 import Image from 'next/image'
 
 function RecBox(props) {

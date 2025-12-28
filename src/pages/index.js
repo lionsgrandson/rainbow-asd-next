@@ -71,7 +71,11 @@ export default function Home() {
         />
       </Head>
       <div id='top'></div>
-      <Link href='#top' className={styles.button} alt='up arrow to top of page'>
+      <Link
+        href='#top'
+        className={styles.button}
+        aria-label='up arrow to top of page'
+      >
         <FaArrowAltCircleUp />
       </Link>
 

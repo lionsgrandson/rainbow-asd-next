@@ -1,6 +1,6 @@
 .startLogo {
   width: 4rem;
-  height: 5rem;
+  height: 4rem;
   margin-left: 2rem;
   margin-top: 2rem;
 }
@@ -41,10 +41,6 @@
 }
 
 @media (min-width: 1600px) {
-  .startLogo {
-    width: 4rem;
-    height: 5rem;
-  }
   .RevPCon {
     font-size: 2.8rem;
   }
@@ -54,20 +50,12 @@
 }
 
 @media (max-width: 1599px) {
-  .startLogo {
-    width: 4rem;
-    height: 5rem;
-  }
   .RevPCon {
     font-size: 2.4rem;
   }
 }
 
 @media (max-width: 1199px) {
-  .startLogo {
-    width: 4rem;
-    height: 5rem;
-  }
   .RevPCon {
     font-size: 2.2rem;
   }
@@ -77,10 +65,6 @@
 }
 
 @media (max-width: 991px) {
-  .startLogo {
-    width: 4rem;
-    height: 5rem;
-  }
   .RevPCon {
     font-size: 2rem;
     margin: 1.5rem;
@@ -92,8 +76,6 @@
 
 @media (max-width: 767px) {
   .startLogo {
-    width: 4rem;
-    height: 5rem;
     margin-left: 1rem;
     margin-top: 1rem;
   }
@@ -107,8 +89,6 @@
 }
 @media (max-width: 575px) {
   .startLogo {
-    width: 4rem;
-    height: 5rem;
     margin-left: 0.5rem;
     margin-top: 0.5rem;
   }
