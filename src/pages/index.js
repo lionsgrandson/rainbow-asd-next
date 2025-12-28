@@ -74,6 +74,7 @@ export default function Home() {
       <Link href='#top' className={styles.button} alt='up arrow to top of page'>
         <FaArrowAltCircleUp />
       </Link>
+
       {/* <Bcard /> */}
 
       <Hero />

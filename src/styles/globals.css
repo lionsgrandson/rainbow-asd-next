@@ -6,6 +6,27 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   direction: rtl;
+
+  /* Target the main icon container */
+  ._access-icon {
+    right: auto !important;
+    left: 2rem !important;
+    bottom: 2rem !important;
+  }
+
+  /* Target the menu that opens */
+  ._access-menu {
+    right: auto !important;
+    left: 2rem !important;
+    bottom: 6rem !important; /* Positions it above the icon */
+  }
+
+  /* Ensure the wrapper doesn't trap the icon on the right */
+  ._access-container {
+    left: 0 !important;
+    right: auto !important;
+    width: auto !important;
+  }
 }
 
 code {
