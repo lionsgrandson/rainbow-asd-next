@@ -1,7 +1,12 @@
 import '../styles/globals.css'
 import '../styles/App.css'
 import Script from 'next/script'
-
+import 'accessibility-react-widget/dist/assets/main.css'
+import dynamic from 'next/dynamic'
+const AccessibilityWidget = dynamic(
+  () => import('accessibility-react-widget'),
+  { ssr: false }
+)
 export default function App({ Component, pageProps }) {
   return (
     <>
@@ -21,7 +26,7 @@ export default function App({ Component, pageProps }) {
     `,
         }}
       />
-
+      <AccessibilityWidget />
       <Component {...pageProps} />
     </>
   )

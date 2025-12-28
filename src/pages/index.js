@@ -1,6 +1,6 @@
 import Hero from '../components/Hero'
 import ContactSec from '../components/ContactSec'
-import QnaSec from '../components/QnaSec'
+import QnaSec from '../components/qnaSec'
 import RecSec from '../components/RecSec'
 import ContactBtn from '../components/ContactBtn'
 import Footer from '../components/Footer'
@@ -75,6 +75,7 @@ export default function Home() {
         <FaArrowAltCircleUp />
       </Link>
       {/* <Bcard /> */}
+
       <Hero />
       <ContactSec />
       <QnaSec />
