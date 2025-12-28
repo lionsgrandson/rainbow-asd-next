@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // output: 'export',
+  output: 'export',
   images: {
-    unoptimized: false,
+    unoptimized: true,
   },
   env: {
     PUBLIC_EMAILJS_KEY: process.env.PUBLIC_EMAILJS_KEY,
