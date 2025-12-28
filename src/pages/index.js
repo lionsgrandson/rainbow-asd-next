@@ -10,6 +10,7 @@ import { FaArrowAltCircleUp } from 'react-icons/fa'
 import Link from 'next/link'
 import Head from 'next/head'
 import Bcard from '@/components/BcardSec'
+
 export default function Home() {
   return (
     <main className={styles.FirstBox}>
@@ -20,6 +21,7 @@ export default function Home() {
           name='google-site-verification'
           content='uZoWhNZLcOSIykKg17oSR5_C0tcDTr8IcnrjGAjY0FQ'
         />
+
         <title>
           הנחייה אישית - לשילוב יחידני ולמתבגרים ובוגרים על הרצף האוטיסטי
         </title>

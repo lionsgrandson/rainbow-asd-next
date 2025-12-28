@@ -89,7 +89,7 @@ export default function ContactSec() {
       id='contact'
       className={(styles.FirstBox, styles.containerContact)}
     >
-      <h2 className={styles.h1Con}>צור קשר</h2>
+      <h3 className={styles.h1Con}>צור קשר</h3>
       <div className={styles.contactContent}>
         <form className={styles.ConForm} onSubmit={handleSubmit}>
           <input
