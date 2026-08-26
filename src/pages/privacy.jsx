@@ -62,8 +62,9 @@ const PrivacyPolicy = () => {
   return (
     <div style={styles.container}>
       <Head>
-        <title>מדיניות פרטיות - Rainbow-ASD</title>
-        <meta name='description' content='מדיניות פרטיות - Rainbow ASD' />
+        <title>מדיניות פרטיות | Rainbow ASD</title>
+        <meta name='description' content='מדיניות הפרטיות של Rainbow ASD וסיון ורונסקי: איסוף מידע, שימוש בו, שמירתו וזכויות המשתמשים באתר.' />
+        <meta name='robots' content='index, follow' />
         <link rel='canonical' href='https://www.rainbow-asd.com/privacy' />
       </Head>
       <div id='top'></div>

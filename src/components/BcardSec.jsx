@@ -40,8 +40,12 @@ function generateAVcard() {
 export default function Bcard() {
   return (
     <section className={Styles.bcardSec}>
-      <Image src={largeLogo} className={Styles.largeLogo} />
-      <Image src={SmallLogo} className={Styles.SmallLogo} />
+      <Image
+        src={largeLogo}
+        className={Styles.largeLogo}
+        alt='Rainbow ASD - סיון ורונסקי'
+      />
+      <Image src={SmallLogo} className={Styles.SmallLogo} alt='' />
       <h1 className={Styles.bcardHeader}>סיוון ורונסקי</h1>
       <h2 className={Styles.secondheaderBcard}>
         פסיכותרפיסטית קוגנטיבית התנהגותית CBT

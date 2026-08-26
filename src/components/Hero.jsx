@@ -9,14 +9,15 @@ function Hero() {
       <header>
         <Image
           src={Icon}
-          alt='a puzzle peice with a rainbow colors'
+          alt='לוגו Rainbow ASD של סיון ורונסקי'
           className={styles.iconHead}
         />
       </header>
       <section className={styles.FirstBox}>
-        <h1> הנחייה אישית</h1>
+        <h1>ליווי אישי בתחום האוטיזם</h1>
         <h2 className={styles.topHeroH2}>
-          להורים שפונים לשילוב יחידני ולמתבגרים ובוגרים על הרצף האוטיסטי
+          הדרכת הורים, שילוב יחידני וליווי מתבגרים ובוגרים באזור פתח תקווה
+          והסביבה
         </h2>
         <div className={styles.HeroSpli}>
           {/* Right side */}
@@ -37,7 +38,7 @@ function Hero() {
 
           <Image
             src={heroSesh}
-            alt='animation of a thearpy sesion'
+            alt='איור של מפגש ליווי אישי ותומך בתחום האוטיזם'
             className={styles.headshot}
           />
 
@@ -63,7 +64,8 @@ function Hero() {
           שלכם, צעד אחר צעד. <br />
           <br />
           ליווי אישי למתבגרים ובוגרים עם אוטיזם, סדנאות להורים, וייעוץ מקצועי
-          מבוסס ניסיון אישי, קליני ואקדמי.
+          מבוסס ניסיון אישי, קליני ואקדמי. המפגשים מתקיימים בקליניקה בקריית אונו,
+          בסמוך לפתח תקווה, ונותנים מענה למשפחות מהאזור ומגוש דן.
         </p>
         <h3 className={styles.heroCTA}>
           מלאו פרטים בטופס ואחזור אליכם לשיחת היכרות

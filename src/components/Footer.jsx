@@ -17,10 +17,10 @@ export default function Footer() {
           <Image
             src={logoLongTxt}
             className={styles.footerImg}
-            alt='לוגו עם סיסמה ופאזל בצבעי הקשת'
+            alt='לוגו Rainbow ASD של סיון ורונסקי'
           />
           <p className={styles.footerSecimgp}>
-            הנחייה אישית להורים וילדים עם אוטיזם
+            ליווי והדרכה בתחום האוטיזם באזור פתח תקווה, קריית אונו וגוש דן
           </p>
         </div>
         <div className={styles.ContactFooter}>
@@ -49,13 +49,13 @@ export default function Footer() {
         </div>
       </div>
       <div className={styles.copyRightSec}>
-        <div className={styles.copyRight}>© 2024 Raindbow ASD</div>
+        <div className={styles.copyRight}>© {new Date().getFullYear()} Rainbow ASD</div>
         <div className={styles.copyRight}>
           Designed and Developed by{' '}
           <Link
             target='_blank'
             href='https://mosheschwartzberg.com'
-            alt='CodeCrafter'
+            aria-label='CodeCrafter - פיתוח האתר'
           >
             CodeCrafter
           </Link>

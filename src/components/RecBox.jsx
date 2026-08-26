@@ -10,27 +10,27 @@ function RecBox(props) {
         <Image
           src={logo}
           className={styles.startLogo}
-          alt='puzzle peice with rainbow colors'
+          alt=''
         />
         <Image
           src={logo}
           className={styles.startLogo}
-          alt='puzzle peice with rainbow colors'
+          alt=''
         />
         <Image
           src={logo}
           className={styles.startLogo}
-          alt='puzzle peice with rainbow colors'
+          alt=''
         />
         <Image
           src={logo}
           className={styles.startLogo}
-          alt='puzzle peice with rainbow colors'
+          alt=''
         />
         <Image
           src={logo}
           className={styles.startLogo}
-          alt='puzzle peice with rainbow colors'
+          alt=''
         />
       </p>
       <p className={styles.RevPCon}>{props.RevText}</p>

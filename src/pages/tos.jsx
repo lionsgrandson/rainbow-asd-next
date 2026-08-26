@@ -62,8 +62,9 @@ const TermsOfService = () => {
   return (
     <div style={styles.container}>
       <Head>
-        <title>תנאי שימוש - Rainbow-ASD</title>
-        <meta name='description' content='תנאי שימוש - Rainbow ASD' />
+        <title>תנאי שימוש | Rainbow ASD</title>
+        <meta name='description' content='תנאי השימוש באתר Rainbow ASD ובשירותי הליווי וההדרכה של סיון ורונסקי בתחום האוטיזם.' />
+        <meta name='robots' content='index, follow' />
         <link rel='canonical' href='https://www.rainbow-asd.com/tos' />
       </Head>
       <div id='top'></div>
@@ -87,7 +88,7 @@ const TermsOfService = () => {
         וייעוץ מקצועי.
       </p>
       <p style={styles.paragraph}>
-        האתר: האתר הרשמי של Rainbow-ASD בכתובת https://rainbow-asd.com.
+        האתר: האתר הרשמי של Rainbow-ASD בכתובת https://www.rainbow-asd.com.
       </p>
       <h2 style={styles.subHeading}>2. קבלת תנאי השימוש</h2>
       <p style={styles.paragraph}>

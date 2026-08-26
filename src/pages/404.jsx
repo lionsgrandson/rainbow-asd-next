@@ -1,4 +1,5 @@
 import React from 'react'
+import Head from 'next/head'
 
 // For the 404 page, the animated text requires CSS keyframes
 // and specific -webkit- properties, which are best kept in a CSS file.
@@ -67,6 +68,10 @@ const Error404 = () => {
 
   return (
     <div className='error-body' style={styles.errorBody}>
+      <Head>
+        <title>העמוד לא נמצא | Rainbow ASD</title>
+        <meta name='robots' content='noindex, nofollow' />
+      </Head>
       <div className='error-container' style={styles.errorContainer}>
         <h1 className='error-code' style={styles.errorCode}>
           404

@@ -1,4 +1,5 @@
 import React from 'react'
+import Head from 'next/head'
 
 const Error403 = () => {
   // Styles converted to JS objects (camelCase properties)
@@ -48,6 +49,10 @@ const Error403 = () => {
     // Note: The body class 'error-body' and animation 'gradientShift' assume
     // global CSS is imported or the component is wrapped appropriately.
     <div className='error-body' style={styles.errorBody}>
+      <Head>
+        <title>גישה אסורה | Rainbow ASD</title>
+        <meta name='robots' content='noindex, nofollow' />
+      </Head>
       <div className='error-container' style={styles.errorContainer}>
         <h1 className='error-code' style={styles.errorCode}>
           403

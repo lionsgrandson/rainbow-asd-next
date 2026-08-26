@@ -9,72 +9,102 @@ import styles from '../styles/index.module.css'
 import { FaArrowAltCircleUp } from 'react-icons/fa'
 import Link from 'next/link'
 import Head from 'next/head'
-import Bcard from '@/components/BcardSec'
-import { Html } from 'next/document'
+
+const SITE_URL = 'https://www.rainbow-asd.com'
+const TITLE = 'סיון ורונסקי | ליווי אוטיזם והדרכת הורים בפתח תקווה'
+const DESCRIPTION =
+  'ליווי אישי למתבגרים ובוגרים על הרצף האוטיסטי, הדרכת הורים ושילוב יחידני עם סיון ורונסקי. קליניקה בקריית אונו ושירות באזור פתח תקווה והסביבה.'
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  '@id': `${SITE_URL}/#business`,
+  name: 'Rainbow ASD - סיון ורונסקי',
+  alternateName: 'Rainbow ASD',
+  url: `${SITE_URL}/`,
+  logo: `${SITE_URL}/img/Logo_icon_noshadow_Custom%20(Custom).png`,
+  image: `${SITE_URL}/img/Logo_with_NO_shadow_wide%20-%20Copy%20(Custom).png`,
+  description: DESCRIPTION,
+  telephone: '+972-54-649-5902',
+  email: 'levanonski@gmail.com',
+  sameAs: ['https://www.facebook.com/sivan.levanon.3/'],
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'צה״ל 115',
+    addressLocality: 'קריית אונו',
+    addressCountry: 'IL',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'פתח תקווה' },
+    { '@type': 'City', name: 'קריית אונו' },
+    { '@type': 'AdministrativeArea', name: 'גוש דן' },
+  ],
+  founder: {
+    '@type': 'Person',
+    name: 'סיון ורונסקי',
+    jobTitle: 'מנחה ומלווה משפחות ומתבגרים בתחום האוטיזם',
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'שירותי ליווי והדרכה בתחום האוטיזם',
+    itemListElement: [
+      'ליווי מתבגרים ובוגרים על הרצף האוטיסטי',
+      'הדרכת הורים',
+      'ליווי שילוב יחידני בחינוך הרגיל',
+      'הדרכת צוותים חינוכיים ומעסיקים',
+    ].map((name) => ({
+      '@type': 'Offer',
+      itemOffered: { '@type': 'Service', name },
+    })),
+  },
+}
 
 export default function Home() {
   return (
     <main className={styles.FirstBox}>
       <Head>
-        <Html lang='he' />
-        {/* Primary Meta Tags */}
-        {/* <!-- Primary Meta Tags --> */}
         <meta
           name='google-site-verification'
           content='uZoWhNZLcOSIykKg17oSR5_C0tcDTr8IcnrjGAjY0FQ'
         />
-        <title>
-          הנחייה אישית - לשילוב יחידני ולמתבגרים ובוגרים על הרצף האוטיסטי
-        </title>
-        <link rel='canonical' href='https://www.rainbow-asd.com/' />
-        <meta
-          name='title'
-          content='הנחייה אישית - לשילוב יחידני ולמתבגרים ובוגרים על הרצף האוטיסטי'
-        />
-        <meta
-          name='description'
-          content='אני כאן בשבילכם – ללוות, להדריך ולבנות יחד מסלול מותאם אישית לילד שלכם, צעד אחר צעד. ליווי אישי למתבגרים ובוגרים עם אוטיזם, סדנאות להורים, וייעוץ מקצועי מבוסס ניסיון אישי, קליני ואקדמי.'
-        />
-        {/* 
-<!-- Open Graph / Facebook --> */}
+        <title>{TITLE}</title>
+        <meta name='description' content={DESCRIPTION} />
+        <meta name='robots' content='index, follow, max-image-preview:large' />
+        <link rel='canonical' href={`${SITE_URL}/`} />
+        <link rel='alternate' hrefLang='he-IL' href={`${SITE_URL}/`} />
         <meta property='og:type' content='website' />
-        <meta property='og:url' content='https://rainbow-asd.com/' />
-        <meta
-          property='og:title'
-          content='הנחייה אישית - לשילוב יחידני ולמתבגרים ובוגרים על הרצף האוטיסטי'
-        />
-        <meta
-          property='og:description'
-          content='אני כאן בשבילכם – ללוות, להדריך ולבנות יחד מסלול מותאם אישית לילד שלכם, צעד אחר צעד. ליווי אישי למתבגרים ובוגרים עם אוטיזם, סדנאות להורים, וייעוץ מקצועי מבוסס ניסיון אישי, קליני ואקדמי.'
-        />
+        <meta property='og:locale' content='he_IL' />
+        <meta property='og:site_name' content='Rainbow ASD' />
+        <meta property='og:url' content={`${SITE_URL}/`} />
+        <meta property='og:title' content={TITLE} />
+        <meta property='og:description' content={DESCRIPTION} />
         <meta
           property='og:image'
-          content='https://rainbow-asd.com/_next/static/media/Logo_icon_noshadow.408216b7.png'
+          content={`${SITE_URL}/img/Logo_with_NO_shadow_wide%20-%20Copy%20(Custom).png`}
         />
-        {/* <!-- X (Twitter) --> */}
-        <meta property='twitter:card' content='summary_large_image' />
+        <meta property='og:image:width' content='1200' />
+        <meta property='og:image:height' content='313' />
         <meta
-          property='twitter:url'
-          content='https://rainbow-asd.com/_next/static/media/Logo_icon_noshadow.408216b7.png'
+          property='og:image:alt'
+          content='Rainbow ASD - סיון ורונסקי, ליווי והדרכה בתחום האוטיזם'
         />
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta name='twitter:title' content={TITLE} />
+        <meta name='twitter:description' content={DESCRIPTION} />
         <meta
-          property='twitter:title'
-          content='הנחייה אישית - לשילוב יחידני ולמתבגרים ובוגרים על הרצף האוטיסטי'
+          name='twitter:image'
+          content={`${SITE_URL}/img/Logo_with_NO_shadow_wide%20-%20Copy%20(Custom).png`}
         />
-        <meta
-          property='twitter:description'
-          content='אני כאן בשבילכם – ללוות, להדריך ולבנות יחד מסלול מותאם אישית לילד שלכם, צעד אחר צעד. ליווי אישי למתבגרים ובוגרים עם אוטיזם, סדנאות להורים, וייעוץ מקצועי מבוסס ניסיון אישי, קליני ואקדמי.'
-        />
-        <meta
-          property='twitter:image'
-          content='https://rainbow-asd.com/_next/static/media/Logo_icon_noshadow.408216b7.png'
+        <script
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </Head>
       <div id='top'></div>
       <Link
         href='#top'
         className={styles.button}
-        aria-label='up arrow to top of page'
+        aria-label='חזרה לראש העמוד'
       >
         <FaArrowAltCircleUp />
       </Link>

@@ -1,4 +1,5 @@
 import React from 'react'
+import Head from 'next/head'
 
 const Error500 = () => {
   const styles = {
@@ -43,6 +44,10 @@ const Error500 = () => {
 
   return (
     <div className='error-body' style={styles.errorBody}>
+      <Head>
+        <title>שגיאת שרת | Rainbow ASD</title>
+        <meta name='robots' content='noindex, nofollow' />
+      </Head>
       <div className='error-container' style={styles.errorContainer}>
         <h1 className='error-code' style={styles.errorCode}>
           500

@@ -1,4 +1,5 @@
 {
+  "id": "/",
   "short_name": "Rainbow ASD",
   "name": "סיון ורונסקי - ליווי מתבגרים ובוגרים על הרצף האוטיסטי והדרכת הורים",
   "icons": [
@@ -18,8 +19,11 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
+  "scope": "/",
+  "lang": "he-IL",
+  "dir": "rtl",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#ffffff",
   "background_color": "#ffffff"
 }

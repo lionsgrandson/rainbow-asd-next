@@ -32,7 +32,7 @@ const items = [
   },
   {
     title: 'איפה מתקיימים המפגשים?',
-    content: 'הקליניקה שלי ממוקמת בקריית אונו',
+    content: 'הקליניקה שלי ממוקמת בקריית אונו, בסמוך לפתח תקווה.',
     content2: '*הרצאות יכולות להתקיים גם בבית הלקוח',
   },
 ]
@@ -93,7 +93,7 @@ export default function QnaSec() {
                         <span key={i}>
                           <Image
                             src='/img/Logo_icon_noshadow_Custom.png'
-                            alt='website logo'
+                            alt=''
                             className={styles.logoQnA}
                             width={50}
                             height={50}

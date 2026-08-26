@@ -89,9 +89,13 @@ export default function ContactSec() {
       id='contact'
       className={(styles.FirstBox, styles.containerContact)}
     >
-      <h4 className={styles.h1Con}>צור קשר</h4>
+      <h2 className={styles.h1Con}>יצירת קשר עם סיון ורונסקי</h2>
       <div className={styles.contactContent}>
-        <form className={styles.ConForm} onSubmit={handleSubmit}>
+        <form
+          id='contactForm'
+          className={styles.ConForm}
+          onSubmit={handleSubmit}
+        >
           <input
             type='text'
             name='fName'
@@ -100,6 +104,7 @@ export default function ContactSec() {
             value={formData.fName}
             onChange={handleChange}
             required
+            aria-label='שם מלא'
           />
           <input
             type='email'
@@ -109,6 +114,7 @@ export default function ContactSec() {
             value={formData.fEmail}
             onChange={handleChange}
             required
+            aria-label='כתובת אימייל'
           />
           <textarea
             name='fMessage'
@@ -118,13 +124,14 @@ export default function ContactSec() {
             value={formData.fMessage}
             onChange={handleChange}
             required
+            aria-label='הודעה'
           />
           <label>{errorMSG === '' ? successMSG : errorMSG}</label>
         </form>
         <div className={styles.midContactSec}>
           <Image
             src={sivanHeadshot}
-            alt='סיון - תמונת פרופיל'
+            alt='סיון ורונסקי, מנחה ומלווה בתחום האוטיזם'
             className={styles.sivanHeadshotContact}
           />
           <button
@@ -139,11 +146,15 @@ export default function ContactSec() {
         <div className={styles.conDit}>
           <div>
             <span>📞</span>
-            <p className={styles.conDitP}>054-649-5902</p>
+            <p className={styles.conDitP}>
+              <a href='tel:+972546495902'>054-649-5902</a>
+            </p>
           </div>
           <div>
             <span>✉️</span>
-            <p className={styles.conDitP}>levanonski@gmail.com</p>
+            <p className={styles.conDitP}>
+              <a href='mailto:levanonski@gmail.com'>levanonski@gmail.com</a>
+            </p>
           </div>
         </div>
       </div>
